@@ -8,6 +8,7 @@ const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const port = process.env.PORT || 3000;
 
 app.use(express.static(publicDirectoryPath));
 
@@ -84,6 +85,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server starts at port 3000');
+app.listen(port, () => {
+  console.log('Server starts at port ' + port);
 });
